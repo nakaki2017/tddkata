@@ -1,38 +1,42 @@
-# Getting Started
+# Bob大叔的保龄球训练 
 
-### Reference Documentation
-For further reference, please consider the following sections:
+#### 这是一道计算保龄球比赛一局总得分的编程题，保龄球的计分规则非常简单：
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* 每一局总共有十轮，每轮一开始会有十支球瓶，球手可以扔两次球，目标就是用尽量少的球把全部球瓶击倒。
+* 如果第一球就把全部的球瓶都击倒了，也就是STRIKE，画面出现“X”，就算完成一轮了，所得分数是10分再加后面两球的倒瓶数，
+* 如果第一球没有全倒，就要再打一球，如果第二球将剩下的球瓶全都击倒，也就是SPARE，画面出现“/”，也算完成一格，所得分数为10分再加下一格第一球的倒瓶数，
+* 如果第二球也没有把球瓶全部击倒的话，那分数就是第一球加第二球倒的瓶数，没有奖励（bonus），再接着打下一格。依此类推。
+* 第十轮有机会扔三次球。如果在第十轮出现STRIKE或者SPARE，则球手可再加打第三球。
+* 全部十轮的得分相加就等于这一局的总得分。
 
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-
-#Bob大叔的保龄球训练 
-
-####这是一道计算保龄球比赛一局总得分的编程题，保龄球的计分规则非常简单：
-
-每一局总共有十轮，每轮一开始会有十支球瓶，球手可以扔两次球，目标就是用尽量少的球把全部球瓶击倒。
-如果第一球就把全部的球瓶都击倒了，也就是STRIKE，画面出现“X”，就算完成一轮了，所得分数是10分再加后面两球的倒瓶数，
-如果第一球没有全倒，就要再打一球，如果第二球将剩下的球瓶全都击倒，也就是SPARE，画面出现“/”，也算完成一格，所得分数为10分再加下一格第一球的倒瓶数，
-如果第二球也没有把球瓶全部击倒的话，那分数就是第一球加第二球倒的瓶数，没有奖励（bonus），再接着打下一格。依此类推。
-第十轮有机会扔三次球。如果在第十轮出现STRIKE或者SPARE，则球手可再加打第三球。
-全部十轮的得分相加就等于这一局的总得分。
-
-####题目要求我们提供一个名字为Game的类，这个类有两个方法：
+#### 题目要求我们提供一个名字为Game的类，这个类有两个方法：
 
 roll(pins : int)：每次球员扔球后执行这个方法，入参是此次扔球击倒的球瓶数量。
 score()：每局比赛结束时执行的方法，返回这局比赛的总得分。
 
 
-####建议test case
-![img](/bowling.jpg)
+#### Suggested Test Cases
 
-![avatar](/Bowling%20Game%20Kata.ppt)
+
+(When scoring “X” indicates a strike, “/” indicates a spare, “-” indicates a miss)
+
+* X X X X X X X X X X X X (12 rolls: 12 strikes) = 10 frames * 30 points = 300
+* 9- 9- 9- 9- 9- 9- 9- 9- 9- 9- (20 rolls: 10 pairs of 9 and miss) = 10 frames * 9 points = 90
+* 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5 (21 rolls: 10 pairs of 5 and spare, with a final 5) = 10 frames * 15 points = 150
+
+![img](https://github.com/nakaki2017/tddkata/raw/master/bowling/bowling.jpg)
+
+
+#### 相关资料
+
+[Bob大叔的保龄球解答ppt](https://github.com/nakaki2017/tddkata/blob/master/bowling/Bowling%20Game%20Kata.ppt)
+
+[Bob大叔-TheBowlingGameKata](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
+
+[编程道场-Bowling题目](http://codingdojo.org/kata/Bowling/)
+
+
+
 
 
 # 保龄球计分规则-详细
